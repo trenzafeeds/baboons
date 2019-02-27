@@ -1,0 +1,2 @@
+remove which.h system (replaced by makefile)
+investigate pthread conditional variables for use in single
