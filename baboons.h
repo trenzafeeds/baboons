@@ -14,11 +14,10 @@
 #define TRUE 1
 #define FALSE 0
 
-#define EAST 2
-#define WEST 3
+#define EAST 1
+#define WEST -1
 
-int baboon(int side);
-
+void *baboon(void *side);
 
 
 

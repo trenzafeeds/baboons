@@ -1,6 +1,7 @@
 #include "baboons.h"
 
-int baboon(int side)
+void *baboon(void *side)
 {
-  
+  start_crawl();
+  end_crawl();
 }

@@ -4,6 +4,7 @@
 #ifndef SINGLEHEAD
 #define SINGLEHEAD
 
-int get_rope(int direction);
+int start_crawl(int side);
+int end_crawl(int side);
 
 #endif
