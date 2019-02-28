@@ -1,13 +1,12 @@
-#include <stdio.h>
+#include "baboons.h"
 #include <pthread.h>
+#include <stdio.h>
 
-#include "which.h"
-
-#ifndef WHICH
-  #error WHICH is not defined
+#ifdef SINGLE
+#include "single.h"
+#else
+#include "multi.h"
 #endif
-
-#include WHICH
 
 #ifndef BABOONS
 #define BABOONS 1
@@ -19,6 +18,8 @@
 #define WEST 3
 
 int baboon(int side);
+
+
 
 
 #endif

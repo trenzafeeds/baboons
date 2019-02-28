@@ -1,8 +1,9 @@
+#include <stdio.h>
 #include <pthread.h>
-#include "stdio.h"
 
-#ifndef SINGLE
+#ifndef SINGLEHEAD
+#define SINGLEHEAD
 
-#define SINGLE 1
+int get_rope(int direction);
 
 #endif

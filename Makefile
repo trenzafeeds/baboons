@@ -18,6 +18,7 @@ INCLUDE_DIRS =
 
 # Compiler flags (e.g. optimization, links, etc.):
 CFLAGS = -O2 -g -Wall -pthread
+SINGLEFLAG = -DSINGLE
 
 # Compiler:
 CC = gcc
@@ -38,7 +39,7 @@ all:
 	make clean
 
 single: $(SINGLE_OBJECTS)
-	   $(CC) $(CFLAGS) $(SINGLE_OBJECTS) -o $(SINGLE_TARGET)
+	   $(CC) $(SINGLEFLAG) $(CFLAGS) $(SINGLE_OBJECTS) -o $(SINGLE_TARGET)
 
 multi: $(MULTI_OBJECTS)
 	  $(CC) $(CFLAGS) $(MULTI_OBJECTS) -o $(MULTI_TARGET)
