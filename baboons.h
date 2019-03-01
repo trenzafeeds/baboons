@@ -1,15 +1,18 @@
-#include "baboons.h"
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #ifdef SINGLE
-#include "single.h"
+  #include "single.h"
 #else
-#include "multi.h"
-#endif
+  #include "multi.h"
+#endif /* SINGLE */
 
 #ifndef BABOONS
-#define BABOONS 1
+#define BABOONS 
+
+#define RAND_MAX 3
 
 #define TRUE 1
 #define FALSE 0
@@ -19,6 +22,6 @@
 
 void *baboon(void *side);
 
+int main();
 
-
-#endif
+#endif /* BABOONS */

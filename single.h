@@ -4,7 +4,7 @@
 #ifndef SINGLEHEAD
 #define SINGLEHEAD
 
-int start_crawl(int side);
-int end_crawl(int side);
+void start_crawl(int side);
+void end_crawl(int side);
 
 #endif

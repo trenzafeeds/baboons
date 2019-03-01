@@ -1,48 +1,35 @@
-# General Makefile for small C programs
-# Based on one by Alexender Hiam in Jan 2013
-# Jim Mahoney | Jan 2016 | Public Domain
+###################################################
 
-############################################################
-# Modify these to fit your project.
+STARGET = baboons_single
+MTARGET = baboons_multi
 
-# The name of the target executable
-SINGLE_TARGET  = baboons_single
-MULTI_TARGE = baboons_multi
+SSOURCE = baboons.c single.c
+MSOURCE = baboons.c multi.c
 
-# Space separated list of all source files
-SINGLE_SOURCE = baboons.c single.c
-MULTI_SOURCE = baboons.c multi.c
-
-# Space separated directories containing source files
-INCLUDE_DIRS =
-
-# Compiler flags (e.g. optimization, links, etc.):
 CFLAGS = -O2 -g -Wall -pthread
-SINGLEFLAG = -DSINGLE
+SFLAG = -D SINGLE
 
-# Compiler:
 CC = gcc
 
-############################################################
-# You probably won't need to change this part.
+###################################################
 
-# Append -I to each include dir
-INCLUDES = $(foreach dir, $(INCLUDE_DIRS), -I$(dir))
-
-# Create list of the object files
-SINGLE_OBJECTS = $(SINGLE_SOURCE:.c=.o)
-MULTI_OBJECTS = $(MULTI_SOURCE:.c=.o)
+MOBJECTS = $(MSOURCE:.c=.o)
+SOBJECTS = baboons_single.o single.o
 
 all:
 	make single
 	make multi
 	make clean
 
-single: $(SINGLE_OBJECTS)
-	   $(CC) $(SINGLEFLAG) $(CFLAGS) $(SINGLE_OBJECTS) -o $(SINGLE_TARGET)
+baboons_single.o: baboons.c
+	$(CC) -c $(CFLAGS) $(SFLAG) -o baboons_single.o baboons.c
 
-multi: $(MULTI_OBJECTS)
-	  $(CC) $(CFLAGS) $(MULTI_OBJECTS) -o $(MULTI_TARGET)
+single: $(SOBJECTS)
+	$(CC) $(CFLAGS) $(SFLAG) $(SOBJECTS) -o $(STARGET)
+	make clean
+
+multi: $(MOBJECTS)
+	$(CC) $(CFLAGS) $(MOBJECTS) -o $(MTARGET)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
