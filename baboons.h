@@ -12,8 +12,6 @@
 #ifndef BABOONS
 #define BABOONS 
 
-#define RAND_MAX 3
-
 #define TRUE 1
 #define FALSE 0
 

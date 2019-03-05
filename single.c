@@ -7,6 +7,8 @@ volatile int count = 0;
 void start_crawl(int side)
 {
   pthread_mutex_lock(&condition_mutex);
+  printf("Got lock\n");
+  printf("%d\n", count);
   while ((count * side) < 0) {
     pthread_cond_wait(&condition_var, &condition_mutex);
   }
