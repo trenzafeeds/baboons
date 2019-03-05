@@ -14,8 +14,13 @@ int main()
   pthread_cond_init(&condition_var, NULL);
   
   int pass[2] = {WEST, EAST};
-  pthread_t test_thread;
-  pthread_create(&test_thread, NULL, baboon, &pass[0]);
-  pthread_join(test_thread, NULL);
+  pthread_t baboons[HOW_MANY];
+  for (int i = 0; i < HOW_MANY; i++) {
+    pthread_create(&baboons[i], NULL, baboon, &pass[rand() % 2]);
+    sleep(rand() % 2);
+  }
+  for (int i = 0; i < HOW_MANY; i++) {
+    pthread_join(baboons[i], NULL);
+  }
   return 0;
 }

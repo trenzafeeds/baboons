@@ -10,7 +10,9 @@
 #endif /* SINGLE */
 
 #ifndef BABOONS
-#define BABOONS 
+#define BABOONS
+
+#define HOW_MANY 10
 
 #define TRUE 1
 #define FALSE 0
