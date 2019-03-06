@@ -4,6 +4,12 @@ pthread_mutex_t condition_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t condition_var = PTHREAD_COND_INITIALIZER;
 volatile int count = 0;
 
+void setup()
+{
+  pthread_mutex_init(&condition_mutex, NULL);
+  pthread_cond_init(&condition_var, NULL);
+}
+
 void start_crawl(int side)
 {
   pthread_mutex_lock(&condition_mutex);
