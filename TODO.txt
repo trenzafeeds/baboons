@@ -1,1 +1,0 @@
-Global variables and possibly locks should be passed to thread function. Probably why its freezing. Consider struct for all arguments?
