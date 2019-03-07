@@ -30,6 +30,7 @@ single: $(SOBJECTS)
 
 multi: $(MOBJECTS)
 	$(CC) $(CFLAGS) $(MOBJECTS) -o $(MTARGET)
+	make clean
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
