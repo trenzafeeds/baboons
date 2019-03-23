@@ -1,3 +1,8 @@
+/*************************************
+ * single.h
+ * See baboons.c for full doc info.
+ *************************************/
+
 #include <pthread.h>
 #include <stdio.h>
 

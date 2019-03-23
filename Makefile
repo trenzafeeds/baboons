@@ -1,4 +1,8 @@
-###################################################
+####
+# Makefile for baboons problem
+# Kat Cannon-MacMartin
+# Adapted from a Makefile by Jim Mahoney
+###
 
 STARGET = baboons_single
 MTARGET = baboons_multi
